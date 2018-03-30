@@ -27,6 +27,7 @@ class ChartsContainer extends Component {
           countryList={this.props.countryList} 
           changeCountry={this.props.changeCountry}
           changeCountryData={this.props.changeCountryData}
+          changeDisasterTypeView={this.props.changeDisasterTypeView}
           disasterTypes={this.props.disasterTypes}
           chartSelections={this.props.chartSelections}
         />

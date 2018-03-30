@@ -10,10 +10,8 @@ import {
 } from 'recharts';
 
 const ChartDisplay = props => {
-  // console.log('Selected country data', JSON.stringify(props.selectedCountryData, null, 2));
   let BarCharts;
   if (props.selectedCountryData) {
-    // console.log('HAYYY INSIDE IF BLOCK', props.selectedCountry);
     BarCharts = Object.keys(props.selectedCountryData)
     .filter(key => props.disasterTypes[key])
     .map((disasterType, i) => (
