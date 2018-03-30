@@ -7,22 +7,21 @@ const initialState = {
 	selectCountryData: null,
   countryList,  // TODO: Populate country list from GET request to database
   disasterTypes: {
-    Climatological: true,
-    Geophysical: true,
-    Hydrological: true,
-    Meteorological: true
+    Climatological: false,
+    Geophysical: false,
+    Hydrological: false,
+    Meteorological: false
   }
 };
 
 const chartsReducer = (state = initialState, action) => {
   switch (action.type) {
-    // Add cases for different action types, returning updated state
 	  case types.CHANGE_COUNTRY:
 		  return {
 			  ...state,
 			  selectedCountry: action.payload,
-			  //selectedCountryData: "hello"
-		  };
+      };
+      
 	  case types.CHANGE_COUNTRY_DATA: {
 		  const selectedCountryData = {
         Climatological: [],
@@ -45,7 +44,19 @@ const chartsReducer = (state = initialState, action) => {
 			  ...state,
 			  selectedCountryData
 		  }
-	  }
+    }
+    
+    case types.CHANGE_DISASTER_TYPE_VIEW: {
+      const disasterTypes = {
+        ...state.disasterTypes
+      };
+      disasterTypes[action.payload.disasterType] = action.payload.newVal;
+      return {
+        ...state,
+        disasterTypes
+      };
+    }
+
     default: 
       return state;
   }

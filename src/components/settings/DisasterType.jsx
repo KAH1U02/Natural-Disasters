@@ -16,27 +16,35 @@ const DisasterType = (props) => (
     <div style={styles.block}>
       <Toggle
         label="Climatological"
-        defaultToggled={true}
+        defaultToggled={false}
         labelPosition="right"
+        onToggle={props.changeDisasterTypeView}
         style={styles.toggle}
+        id={"Climatological"}
       />
       <Toggle
         label="Geophysical"
-        defaultToggled={true}
+        defaultToggled={false}
         labelPosition="right"
+        onToggle={props.changeDisasterTypeView}
         style={styles.toggle}
+        id={"Geophysical"}
       />
       <Toggle
         label="Hydrological"
-        defaultToggled={true}
+        defaultToggled={false}
         labelPosition="right"
+        onToggle={props.changeDisasterTypeView}
         style={styles.toggle}
+        id={"Hydrological"}
       />
       <Toggle
         label="Meteorological"
-        defaultToggled={true}
+        defaultToggled={false}
         labelPosition="right"
+        onToggle={props.changeDisasterTypeView}
         style={styles.toggle}
+        id={"Meteorological"}
       />
     </div>
   </div>

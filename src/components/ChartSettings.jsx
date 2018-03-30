@@ -48,7 +48,10 @@ const ChartSettings = props => {
         dataSource={props.countryList}
         onNewRequest={inputVal => handleNewRequest(inputVal, props)}
       />
-      <DisasterType />
+			<DisasterType 
+				disasterTypes={props.disasterTypes} 
+				changeDisasterTypeView={props.changeDisasterTypeView} 
+			/>
       {/* <DisasterStats /> */}
     </Paper>
   );
